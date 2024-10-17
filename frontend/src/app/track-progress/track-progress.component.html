@@ -1,0 +1,18 @@
+<div class="container mt-5">
+    <h2>Track Course Progress</h2>
+    <form (ngSubmit)="updateProgress()">
+        <div class="form-group">
+            <label for="courseId">Course ID</label>
+            <input type="number" id="courseId" [(ngModel)]="courseId" name="courseId" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="progress">Progress (%)</label>
+            <input type="number" id="progress" [(ngModel)]="progress" name="progress" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Progress</button>
+    </form>
+
+    <div class="mt-5">
+        <h3>Your Current Progress: {{ progress }}%</h3>
+    </div>
+</div>

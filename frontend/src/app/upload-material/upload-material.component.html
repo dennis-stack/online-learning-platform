@@ -1,0 +1,14 @@
+<div class="container mt-5">
+    <h2>Upload Course Material</h2>
+    <form (ngSubmit)="uploadMaterial()">
+        <div class="form-group">
+            <label for="courseId">Course ID</label>
+            <input type="number" id="courseId" [(ngModel)]="courseId" name="courseId" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="file">Choose File</label>
+            <input type="file" (change)="onFileSelected($event)" class="form-control-file" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+</div>

@@ -1,0 +1,41 @@
+<div class="container mt-5">
+    <h2>Available Courses</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Course Name</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let course of courses">
+                <td>{{ course.name }}</td>
+                <td>{{ course.description }}</td>
+                <td>
+                    <button class="btn btn-primary" (click)="enroll(course.id)">Enroll</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Courses Pending Approval</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Course Name</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let course of pendingCourses">
+                <td>{{ course.name }}</td>
+                <td>{{ course.description }}</td>
+                <td>
+                    <button class="btn btn-success" (click)="approve(course.id)">Approve</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
