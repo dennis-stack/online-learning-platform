@@ -32,11 +32,7 @@ const routes: Routes = [
   declarations: [
     RegisterComponent,
     LoginComponent,
-    UpdateProfileComponent,
-    CreateCourseComponent,
-    ApproveCourseComponent,
-    UploadMaterialComponent,
-    TrackProgressComponent
+    UpdateProfileComponent
   ],
   imports: [
     BrowserModule,

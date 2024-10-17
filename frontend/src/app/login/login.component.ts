@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../services/auth.service';
+import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,14 +7,16 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html'
 })
 export class LoginComponent {
-  email = '';
-  password = '';
+  email: string = '';
+  password: string = '';
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   login() {
-    this.authService.login({ email: this.email, password: this.password }).subscribe(() => {
-      this.router.navigate(['/courses']);
+    const credentials = { email: this.email, password: this.password };
+    this.userService.login(credentials).subscribe((response: any) => {
+      localStorage.setItem('access_token', response.token);
+      this.router.navigate(['/create-course']);
     });
   }
 }
