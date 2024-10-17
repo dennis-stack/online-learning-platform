@@ -1,11 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router'; 
-import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
-import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
@@ -32,7 +30,6 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent,
     RegisterComponent,
     LoginComponent,
     UpdateProfileComponent,
@@ -44,11 +41,9 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes), 
-    AppRoutingModule,
     HttpClientModule,
     FormsModule
   ],
-  providers: [UserService, CourseService, MaterialService, ProgressService],
-  bootstrap: [AppComponent]
+  providers: [UserService, CourseService, MaterialService, ProgressService]
 })
 export class AppModule { }
